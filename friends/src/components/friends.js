@@ -5,7 +5,7 @@ import FriendCard from './friendCard';
 
 
 const Friends = (props) => {
-
+    console.log('props in Friends', props)
     const [friends, setFriends] = useState([]);
 
     useEffect(()=> {
@@ -20,7 +20,7 @@ const Friends = (props) => {
     return(
         <div>
             <h1>Friends</h1>
-            {friends.map((friend)=><FriendCard friend={friend}/>)}
+            {friends.map((friend)=><FriendCard friend={friend} history={props.history}/>)}
         </div>
     )
 }

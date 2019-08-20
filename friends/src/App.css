@@ -9,21 +9,58 @@
   justify-content: space-between;
   flex-wrap: wrap;
   width: 320px;
-  background: gainsboro;
+  background: #ccd7de;
   margin: 10px;
   padding: 2px 10px;
   border-radius: 5px;
   box-shadow: 3px 4px 10px -6px rgba(0,102,166,0.39);
-
 }
 .friendCard>h4, h5 {
   margin: 5px;
+}
+.friendCard:hover {
+  transform: scale(1.01,1.01);
+  cursor: pointer;
 }
 
 h4, h5 {
   font-weight: normal;
   color: #00375A
 
+}
+
+.tooltiptext {
+  visibility: hidden;
+  width: 80px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  font-size: 0.75rem;
+  border-radius: 6px;
+  padding: 2px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 35%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
 }
 /* 
 .App-logo {
