@@ -1,5 +1,29 @@
 .App {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.friendCard {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 320px;
+  background: gainsboro;
+  margin: 10px;
+  padding: 2px 10px;
+  border-radius: 5px;
+  box-shadow: 3px 4px 10px -6px rgba(0,102,166,0.39);
+
+}
+.friendCard>h4, h5 {
+  margin: 5px;
+}
+
+h4, h5 {
+  font-weight: normal;
+  color: #00375A
+
 }
 /* 
 .App-logo {

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 // import axios from 'axios';
 import { axiosWithAuth } from '../utils/axiosWithAuth';
+import FriendCard from './friendCard';
 
 
 const Friends = (props) => {
@@ -19,7 +20,7 @@ const Friends = (props) => {
     return(
         <div>
             <h1>Friends</h1>
-            {friends.map((friend)=><h3>{friend.name}</h3>)}
+            {friends.map((friend)=><FriendCard friend={friend}/>)}
         </div>
     )
 }

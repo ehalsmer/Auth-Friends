@@ -18,19 +18,10 @@ const NewFriend = props => {
       .post('http://localhost:5000/api/friends', newFriend)
       .then(response => {
           console.log('post to friends response', response)
+          props.history.push('/friends')
       })
       .catch(err => console.log(err));
   }
-
-//   useEffect(() => {
-//     axiosWithAuth()
-//       .get("http://localhost:5000/api/friends")
-//       .then(response => {
-//         console.log("get response", response);
-//         setFriends(response.data);
-//       })
-//       .catch(error => console.log("get error", error));
-//   }, []);
 
   return (
     <div>
