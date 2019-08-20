@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from 'axios';
 
 
-const LoginForm = () => {
+const LoginForm = (props) => {
   const [credentials, setCredentials] = useState({
       username: "",
       password: ""
@@ -22,8 +22,10 @@ const LoginForm = () => {
     axios.post('http://localhost:5000/api/login', credentials)
     .then(response => {
         //response.data.payload is the token
-        console.log('response', response);
+        // console.log('response', response);
         localStorage.setItem('token', response.data.payload)
+        props.history.push('/friends')
+
     })
     .catch(error => console.log('Error:', error.response.data.error))
   }
