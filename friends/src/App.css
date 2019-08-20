@@ -41,7 +41,7 @@ h4, h5 {
   position: absolute;
   z-index: 1;
   bottom: 125%;
-  left: 35%;
+  left: 55%;
   margin-left: -60px;
   opacity: 0;
   transition: opacity 0.3s;
