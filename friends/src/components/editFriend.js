@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { axiosWithAuth } from "../utils/axiosWithAuth";
+import { Input, Button } from 'semantic-ui-react'
+
 
 const EditFriend = props => {
   const id = props.match.params.id;
-  const [friend, setFriend] = useState({ name: "" });
+  const [friend, setFriend] = useState({});
   const [editedFriend, setEditedFriend] = useState(friend);
   console.log("friend in editfriend", friend);
   // console.log('props in EditFriend', props)
@@ -47,30 +49,30 @@ const EditFriend = props => {
     <div>
       <h1>Edit {friend.name}</h1>
       <form onSubmit={handleSubmit}>
-        <input
+        <Input
           type="text"
           name="name"
           value={editedFriend.name}
           onChange={handleChange}
           placeholder={friend.name}
         />
-        <input
+        <Input
           type="number"
           name="age"
           value={editedFriend.age}
           onChange={handleChange}
           placeholder={friend.age}
         />
-        <input
+        <Input
           type="text"
           name="email"
           value={editedFriend.email}
           onChange={handleChange}
           placeholder={friend.email}
         />
-        <button>Submit</button>
+        <Button>Submit</Button>
       </form>
-        <button onClick={removeFriend}>Remove Friend</button>
+        <Button onClick={removeFriend}>Remove Friend</Button>
     </div>
   );
 };

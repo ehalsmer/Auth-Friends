@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-// import axios from 'axios';
+import { Input, Button } from 'semantic-ui-react'
 import { axiosWithAuth } from "../utils/axiosWithAuth";
 
 const NewFriend = props => {
@@ -27,28 +27,28 @@ const NewFriend = props => {
     <div>
       <h2>Add New Friend</h2>
       <form onSubmit={handleSubmit}>
-        <input
+        <Input
           type="text"
           name="name"
           value={newFriend.name}
           onChange={handleChange}
           placeholder="Name"
         />
-        <input
+        <Input
           type="number"
           name="age"
           value={newFriend.age}
           onChange={handleChange}
           placeholder="Age"
         />
-        <input
+        <Input
           type="text"
           name="email"
           value={newFriend.email}
           onChange={handleChange}
           placeholder="Email"
         />
-        <button>Add Friend</button>
+        <Button>Add Friend</Button>
       </form>
     </div>
   );

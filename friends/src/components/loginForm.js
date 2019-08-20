@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from 'axios';
+import { Input, Button } from 'semantic-ui-react'
 
 
 const LoginForm = (props) => {
@@ -32,19 +33,19 @@ const LoginForm = (props) => {
 
   return (
     <form onSubmit={login}>
-      <input
+      <Input
         type="text"
         name="username"
         value={credentials.username}
         onChange={handleChange}
       />
-      <input
+      <Input
         type="password"
         name="password"
         value={credentials.password}
         onChange={handleChange}
       />
-      <button>Login</button>
+      <Button>Login</Button>
     </form>
   );
 };

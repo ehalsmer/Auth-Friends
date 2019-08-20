@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-// import axios from 'axios';
+import Loader from 'react-loader-spinner';
 import { axiosWithAuth } from '../utils/axiosWithAuth';
 import FriendCard from './friendCard';
 
@@ -20,6 +20,7 @@ const Friends = (props) => {
     return(
         <div>
             <h1>Friends</h1>
+            {friends.length == 0 && <Loader type="Circles" color="#204963" height="60" width="60" />}
             {friends.map((friend)=><FriendCard friend={friend} history={props.history}/>)}
         </div>
     )
