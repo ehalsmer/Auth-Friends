@@ -18,7 +18,14 @@ const LoginForm = () => {
   }
   const login = (e) => {
     e.preventDefault();
-    console.log('make axios call with these credentials', credentials)
+    // console.log('make axios call with these credentials', credentials)
+    axios.post('http://localhost:5000/api/login', credentials)
+    .then(response => {
+        //response.data.payload is the token
+        console.log('response', response);
+        localStorage.setItem('token', response.data.payload)
+    })
+    .catch(error => console.log('Error:', error.response.data.error))
   }
 
   return (
