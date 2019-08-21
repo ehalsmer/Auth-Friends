@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { axiosWithAuth } from "../utils/axiosWithAuth";
-import { Input, Button } from 'semantic-ui-react'
+import { Input, Button, Segment, Form } from 'semantic-ui-react'
 
 
 const EditFriend = props => {
@@ -46,9 +46,9 @@ const EditFriend = props => {
   }, []);
 
   return (
-    <div>
+    <Segment raised >
       <h1>Edit {friend.name}</h1>
-      <form onSubmit={handleSubmit}>
+      <Form onSubmit={handleSubmit}>
         <Input
           type="text"
           name="name"
@@ -71,9 +71,9 @@ const EditFriend = props => {
           placeholder={friend.email}
         />
         <Button>Submit</Button>
-      </form>
         <Button onClick={removeFriend}>Remove Friend</Button>
-    </div>
+      </Form>
+    </Segment>
   );
 };
 

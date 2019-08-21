@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Input, Button } from 'semantic-ui-react'
+import { Input, Button, Segment } from 'semantic-ui-react'
 import { axiosWithAuth } from "../utils/axiosWithAuth";
 
 const NewFriend = props => {
@@ -24,7 +24,7 @@ const NewFriend = props => {
   }
 
   return (
-    <div>
+    <Segment raised className="forms">
       <h2>Add New Friend</h2>
       <form onSubmit={handleSubmit}>
         <Input
@@ -50,7 +50,7 @@ const NewFriend = props => {
         />
         <Button>Add Friend</Button>
       </form>
-    </div>
+    </Segment>
   );
 };
 
