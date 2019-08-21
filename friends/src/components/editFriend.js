@@ -48,7 +48,7 @@ const EditFriend = props => {
   return (
     <Segment raised >
       <h1>Edit {friend.name}</h1>
-      <Form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit}>
         <Input
           type="text"
           name="name"
@@ -72,7 +72,7 @@ const EditFriend = props => {
         />
         <Button>Submit</Button>
         <Button onClick={removeFriend}>Remove Friend</Button>
-      </Form>
+      </form>
     </Segment>
   );
 };

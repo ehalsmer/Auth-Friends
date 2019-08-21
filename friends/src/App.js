@@ -13,6 +13,11 @@ import "./App.css";
 function App() {
   const token = localStorage.getItem("token");
 
+  const signOut = (e) => {
+    e.preventDefault();
+    localStorage.removeItem("token");
+  }
+
   return (
     <Router>
       <div className="App">
@@ -20,10 +25,10 @@ function App() {
         <Segment.Group horizontal >
           <Segment textAlign="center">
             <Link to="/login">
-              <Icon name="lock open" />
+              <Icon name="sign-in" />
               Login
             </Link>
-          </Segment>
+          </Segment>}
           <Segment textAlign="center">
             <Link to="/friends">
               <Icon name="users" />
